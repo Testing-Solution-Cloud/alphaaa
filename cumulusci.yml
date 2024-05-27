@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.88.0'
+project:
+    name: alphaaa
+    package:
+        name: alphaaa
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/alphaaa/tests
+            options:
+                outputdir: robot/alphaaa/results
+
+    robot_testdoc:
+        options:
+            path: robot/alphaaa/tests
+            output: robot/alphaaa/doc/alphaaa_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
